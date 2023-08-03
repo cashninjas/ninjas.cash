@@ -1,0 +1,23 @@
+/* ----------------------------------------------------------------
+	Custom CSS
+
+	Add all your Custom Styled CSS here for New Styles or
+	Overwriting Default Theme Styles for Better Hanlding Updates
+-----------------------------------------------------------------*/
+.displayMobile {
+	display: none;
+}
+
+@media (max-width: 980px) {
+	.displayMobile {
+		display: block;
+	}
+
+	.hideMobile {
+		display: none;
+	}
+
+	.noMarginMobile {
+		margin: 0;
+	}
+}
