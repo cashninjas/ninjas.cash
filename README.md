@@ -10,11 +10,11 @@ The CashScript artifact of the minting smart contract is provided in `js/mint.js
 
 The minting app relies on `walletconnect/sign-client`, `walletconnect/modal`, `libauth`, `cashscript` and `electrum-cash` libraries.
 
-Vite is used as bundler for the code, the `public` folder that goes with it is used to avoid jQuery bundling issues and have a consistent image path on production deploys. Vite is configured to allow top-level-await for libauth-v2, specific Vite configuration can be found in `vite.config.js`.
+Vite is used as bundler for the code, the `public` folder that goes with it is used to avoid jQuery bundling issues and have a consistent image path on production deploys. Vite is configured to allow top-level-await for libauth-v2, specific Vite configuration can be found in `vite.config.js`. Top-level-await support of by the user's browser is necessary to use the minting page.
 
 To implement the wallet connect functionality the following guide was used: '[Docs: Dapp Usage](https://docs.walletconnect.com/api/sign/dapp-usage)'.
 
-The Wallet Connect V2 standard for BCH is supported and tested with [Cashonize](https://cashonize.com/) at the time of mint, the [Zapit](https://zapit.io/) wallet has also added support but still needs to be tested,  WalletConnect v2 in [Paytaca](https://www.paytaca.com/) is around the corner.
+The Wallet Connect V2 standard for BCH is supported by [Cashonize](https://cashonize.com/), the [Zapit](https://zapit.io/) wallet and the [Paytaca](https://www.paytaca.com/) mobile wallet is at the time of writing.
 
 ## Installation
 
