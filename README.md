@@ -18,7 +18,7 @@ The Wallet Connect V2 standard for BCH is supported and tested with [Cashonize](
 
 ## Installation
 
-```
+```sh
 git clone https://github.com/cashninjas/ninjas.cash
 
 npm install
@@ -32,7 +32,7 @@ Update `js/mintingParams.js` with your specific configuration.
 
 Then startup the web server!
 
-```
+```sh
 npm run dev
 ```
 
