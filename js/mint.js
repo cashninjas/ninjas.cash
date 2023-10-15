@@ -150,12 +150,13 @@ async function mintNFT(mintIndex, mintTotal) {
   // Get userInput for mint
   const userAddress = await getUserAddress();
   const userUtxos = await electrumServer.getUtxos(userAddress);
+  const networkFeeMint = 520;
   const filteredUserUtxos = userUtxos.filter(
-    val => !val.token && val.satoshis >= mintPriceSats,
+    val => !val.token && val.satoshis >= mintPriceSats + networkFeeMint,
   );
   const bchBalanceUser = userUtxos.reduce((total, utxo) => utxo.token ? total : total + utxo.satoshis, 0n);
   const userInput = filteredUserUtxos[0];
-  if (!userInput && bchBalanceUser > BigInt(mintPriceSats)) {
+  if (!userInput && bchBalanceUser > BigInt(mintPriceSats + networkFeeMint)) {
     alert("No suitable utxos found for minting. You need to consolidate the balance of your utxos.");
     cleanupFailedMint();
     throw ("No suitable utxos found for minting. You need to consolidate the balance of your utxos.");
@@ -164,6 +165,11 @@ async function mintNFT(mintIndex, mintTotal) {
     alert("No suitable utxos found for minting. Not enough funds in the wallet to mint!");
     cleanupFailedMint();
     throw ("No suitable utxos found for minting. Not enough funds in the wallet to mint!");
+  }
+  if (!userInput && bchBalanceUser <= BigInt(mintPriceSats + networkFeeMint)) {
+    alert("No suitable utxos found for minting. Need enough BCH for the network fee!");
+    cleanupFailedMint();
+    throw ("No suitable utxos found for minting. Need enough BCH for the network fee!");
   }
 
   // Get the minting utxo to use from the api endpoint
