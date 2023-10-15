@@ -20,6 +20,6 @@ const wcMetadata = {
   description: 'CashTokens NFT Collection',
   url: 'https://ninjas.cash/',
   icons: ['https://ninjas.cash/images/logo.png']
-}
+};
 
 export { projectId, urlApiServer, tokenId, collectionSize, mintPriceSats, payoutAddress, numberOfThreads, network, wcMetadata };

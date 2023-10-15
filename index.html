@@ -733,7 +733,7 @@
         const fetchResult = await fetchPromise.json();
         document.getElementById("nftsMinted").textContent = fetchResult.nftsMinted;
         document.getElementById("mintStatus").textContent = fetchResult.mintStatus;
-      } catch (error) { console.log(error) }
+      } catch (error) { console.log(error); }
     }
   </script>
   <!-- JavaScript Imports-->

@@ -1,5 +1,5 @@
-import SignClient from '@walletconnect/sign-client'
-import { WalletConnectModal } from '@walletconnect/modal'
+import SignClient from '@walletconnect/sign-client';
+import { WalletConnectModal } from '@walletconnect/modal';
 import { Contract, ElectrumNetworkProvider, SignatureTemplate } from "cashscript";
 import contractArtifact from "/js/mint.json";
 import { decodeCashAddress, binToHex, hexToBin, vmNumberToBigInt, bigIntToVmNumber, encodeCashAddress, decodeTransaction, cashAddressToLockingBytecode, stringify } from "@bitauth/libauth";
@@ -11,11 +11,11 @@ const updateAmountMinted = async () => {
     const fetchPromise = await fetch(urlApiServer);
     const fetchResult = await fetchPromise.json();
     document.getElementById("nftsMinted").textContent = fetchResult.nftsMinted;
-  } catch (error) { console.log(error) }
-}
-updateAmountMinted()
+  } catch (error) { console.log(error); }
+};
+updateAmountMinted();
 // update amount minted each 20 seconds
-setInterval(updateAmountMinted, 20_000)
+setInterval(updateAmountMinted, 20_000);
 
 // 1. Setup Client with relay server
 const signClient = await SignClient.init({
@@ -23,7 +23,7 @@ const signClient = await SignClient.init({
   // optional parameters
   relayUrl: 'wss://relay.walletconnect.com',
   metadata: wcMetadata
-})
+});
 
 // Get last WalletConnect session from local storage is there is any
 const lastKeyIndex = signClient.session.getAll().length - 1;
@@ -78,22 +78,22 @@ if (lastSession) setTimeout(() => {
 try {
   document.getElementById('my-button').addEventListener('click', async () => {
     const { uri, approval } = await signClient.connect({ requiredNamespaces });
-    console.log(uri)
-    if (session) return
-    await walletConnectModal.openModal({ uri })
+    console.log(uri);
+    if (session) return;
+    await walletConnectModal.openModal({ uri });
     // Await session approval from the wallet.
-    session = await approval()
+    session = await approval();
     // Handle the returned session (e.g. update UI to "connected" state).
     document.getElementById('my-button').style.display = "none";
     document.getElementById('connectInfo').style.display = "none";
     document.getElementById('mintSection').style.display = "block";
-    console.log(session)
+    console.log(session);
     //onSessionConnect(session)
     // Close the QRCode modal in case it was open.
-    walletConnectModal.closeModal()
-  })
+    walletConnectModal.closeModal();
+  });
 
-} catch (error) { console.log(error) }
+} catch (error) { console.log(error); }
 
 // Convert payoutAddress to payoutLockingBytecode
 const addressInfo = decodeCashAddress(payoutAddress);
@@ -104,7 +104,7 @@ const contractParams = [
   BigInt(mintPriceSats),
   BigInt(numberOfThreads),
   pkhPayout,
-  BigInt(collectionSize-1),
+  BigInt(collectionSize - 1),
 ];
 
 // Create a custom 1-of-1 electrum cluster for bch-mainnet
@@ -129,19 +129,27 @@ const createMintingTxs = async () => {
   for (let i = 1; i <= quantityNfts; i++) {
     await mintNFT(i, quantityNfts);
   }
-}
+};
 mintButton.onclick = createMintingTxs;
 
 let nrsMinted = [];
 
+// Cleanup state when mint fails. Fix button,
+// and onclick callback.
+const cleanupFailedMint = () => {
+  mintButton.textContent = "Mint Now";
+  mintButton.onclick = createMintingTxs;
+  updateAmountMinted();
+}
+
 async function mintNFT(mintIndex, mintTotal) {
   // Visual feedback for user, disable button onclick
   mintButton.textContent = `Building transaction ${mintIndex}/${mintTotal}...`;
-  mintButton.onclick = () => { }
+  mintButton.onclick = () => { };
 
   // Get userInput for mint
-  const userAddress = await getUserAddress()
-  const userUtxos = await electrumServer.getUtxos(userAddress)
+  const userAddress = await getUserAddress();
+  const userUtxos = await electrumServer.getUtxos(userAddress);
   const filteredUserUtxos = userUtxos.filter(
     val => !val.token && val.satoshis >= mintPriceSats,
   );
@@ -149,11 +157,13 @@ async function mintNFT(mintIndex, mintTotal) {
   const userInput = filteredUserUtxos[0];
   if (!userInput && bchBalanceUser > BigInt(mintPriceSats)) {
     alert("No suitable utxos found for minting. You need to consolidate the balance of your utxos.");
-    throw ("No suitable utxos found for minting. You need to consolidate the balance of your utxos.")
+    cleanupFailedMint();
+    throw ("No suitable utxos found for minting. You need to consolidate the balance of your utxos.");
   }
   if (!userInput && bchBalanceUser <= BigInt(mintPriceSats)) {
     alert("No suitable utxos found for minting. Not enough funds in the wallet to mint!");
-    throw ("No suitable utxos found for minting. Not enough funds in the wallet to mint!")
+    cleanupFailedMint();
+    throw ("No suitable utxos found for minting. Not enough funds in the wallet to mint!");
   }
 
   // Get the minting utxo to use from the api endpoint
@@ -164,9 +174,9 @@ async function mintNFT(mintIndex, mintTotal) {
     const selectedCommitment = fetchResultMint.availableMintingUtxo;
     let mintUtxo = contractUtxos.find(utxo => utxo.token.category == tokenId && utxo.token.nft.commitment === selectedCommitment);
     // if mintUtxo is undefined, refetch API server
-    if (!mintUtxo) mintUtxo = await getAvailableMintUtxo()
-    return mintUtxo
-  }
+    if (!mintUtxo) mintUtxo = await getAvailableMintUtxo();
+    return mintUtxo;
+  };
   const selectedMintUtxo = await getAvailableMintUtxo();
   // create minting transaction
   const newContractBalance = selectedMintUtxo.satoshis + BigInt(mintPriceSats);
@@ -208,15 +218,15 @@ async function mintNFT(mintIndex, mintTotal) {
     .to(contract.tokenAddress, newContractBalance, tokenDetailsContract)
     .to(toTokenAddress(userAddress), 1000n, tokenDetailsUser)
     .withoutChange()
-    .withTime(0)
-  if (changeAmount > 1000n) transaction.to(userAddress, changeAmount)
+    .withTime(0);
+  if (changeAmount > 1000n) transaction.to(userAddress, changeAmount);
 
   try {
     const rawTransactionHex = await transaction.build();
     const decodedTransaction = decodeTransaction(hexToBin(rawTransactionHex));
     if (typeof decodedTransaction === "string") {
       alert("No suitable utxos found for minting. Try to consolidate your utxos!");
-      throw ("No suitable utxos found for minting. Try to consolidate your utxos!")
+      throw ("No suitable utxos found for minting. Try to consolidate your utxos!");
     }
     decodedTransaction.inputs[1].unlockingBytecode = Uint8Array.from([]);
 
@@ -242,36 +252,40 @@ async function mintNFT(mintIndex, mintTotal) {
       ...decodedTransaction.inputs[1],
       lockingBytecode: (cashAddressToLockingBytecode(userAddress)).bytecode,
       valueSatoshis: BigInt(userInput.satoshis),
-    }]
+    }];
 
     const wcTransactionObj = {
       transaction: decodedTransaction,
       sourceOutputs: listSourceOutputs,
       broadcast: true,
       userPrompt: "Mint Cash-Ninja NFT"
-    }
+    };
 
-    console.log(wcTransactionObj)
+    console.log(wcTransactionObj);
     setTimeout(() => alert('Approve the minting transaction in Cashonize'), 100);
-    const signResult = await signTransaction(wcTransactionObj)
-    console.log(signResult)
+    const signResult = await signTransaction(wcTransactionObj);
+    console.log(signResult);
     if (signResult) {
       alert(`Mint succesful! txid: ${signResult.signedTransactionHash}`);
-      console.log(`Mint succesful! txid: ${signResult.signedTransactionHash}`)
+      console.log(`Mint succesful! txid: ${signResult.signedTransactionHash}`);
       mintButton.textContent = "Mint More";
       // fetch image & name
       const nftNumber = nftNumberMint + 1n;
       await fetchInfoNinja(nftNumber);
       nrsMinted.push(nftNumber);
-      listMintedNfts()
+      listMintedNfts();
     } else {
       alert('Minting transaction cancelled');
-      console.log('Minting transaction cancelled')
+      console.log('Minting transaction cancelled');
       mintButton.textContent = "Mint Now";
     }
     mintButton.onclick = createMintingTxs;
-    updateAmountMinted()
-  } catch (error) { console.log(error) }
+    updateAmountMinted();
+  } catch (error) {
+    alert(error);
+    console.log(error);
+    cleanupFailedMint();
+  }
 }
 
 const fetchInfoNinja = async (nftNumber) => {
@@ -280,13 +294,13 @@ const fetchInfoNinja = async (nftNumber) => {
     let respNinjaInfo = await promiseNinjaInfo.json();
     // If empty response, refetch API server after 0.5 sec
     if (Object.keys(respNinjaInfo).length === 0) {
-      setTimeout(async () => { respNinjaInfo = await fetchInfoNinja(nftNumber), 500 })
+      setTimeout(async () => { respNinjaInfo = await fetchInfoNinja(nftNumber), 500; });
     } else {
       document.getElementById("imageMint").src = urlApiServer + "/images/" + nftNumber;
       document.getElementById("textImageMint").textContent = respNinjaInfo.name;
     }
-  } catch (error) { console.log(error) }
-}
+  } catch (error) { console.log(error); }
+};
 
 const listMintedNfts = () => {
   document.getElementById("numbersMinted").style.display = "block";
@@ -306,9 +320,9 @@ const listMintedNfts = () => {
       nr.style.textDecoration = "underline";
     });
     span.appendChild(nrButton);
-  })
+  });
   Placeholder.replaceWith(span);
-}
+};
 
 async function signTransaction(options) {
   try {

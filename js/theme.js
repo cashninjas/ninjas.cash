@@ -131,7 +131,7 @@
     $('.navbar-side-open [data-bs-toggle="collapse"], .navbar-overlay [data-bs-toggle="collapse"]').on('click', function (e) {
       e.preventDefault();
       $($(this).data('bs-target')).toggleClass('show');
-    })
+    });
 
   /*---------------------------------
      Carousel (Owl Carousel)
@@ -178,14 +178,14 @@
   window.onload = function () {
     var scene = document.getElementById('scene');
     //var parallaxInstance = new Parallax(scene);
-  }
+  };
   /*------------------------
      tooltips
   -------------------------- */
-  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl)
-  })
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
 
 
   /*--------------------------------
@@ -351,7 +351,7 @@
               }, 3000);
             },
             error: function (e) {
-              console.log(e)
+              console.log(e);
             }
           });
         });
@@ -387,10 +387,10 @@
           }
         },
         error: function (e) {
-          console.log(e)
+          console.log(e);
         }
       });
     }
   });
 
-})(jQuery)
+})(jQuery);
