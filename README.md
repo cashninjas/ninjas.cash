@@ -14,7 +14,7 @@ Vite is used as bundler for the code, the `public` folder that goes with it is u
 
 To implement the wallet connect functionality the following guide was used: '[Docs: Dapp Usage](https://docs.walletconnect.com/api/sign/dapp-usage)'.
 
-The Wallet Connect V2 standard for BCH is supported by [Cashonize](https://cashonize.com/), the [Zapit](https://zapit.io/) wallet and the [Paytaca](https://www.paytaca.com/) mobile wallet is at the time of writing.
+The Wallet Connect V2 standard for BCH is supported by [Cashonize](https://cashonize.com/), the [Zapit](https://zapit.io/) wallet and the [Paytaca](https://www.paytaca.com/) wallet is at the time of writing.
 
 ## Installation
 
