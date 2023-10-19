@@ -6,7 +6,7 @@ const listBackgrounds = ["City", "Cyber City", "Dark City", "Dark Forest", "Grea
     "River Path", "River", "Swamp", "Temple Rooftops", "Temple Streets", "Temple", "Village", "Volcanic"];
 const listEyes = ["BCH", "Berserker", "Blue", "Foresight", "Future", "Green", "Invader", "Magenta", "Marksmen",
     "Orange", "Poison", "Psychic", "Red", "Synth", "White", "Yellow"];
-const listColors = ["BCH", "Blue", "Burnt Orange", "Cyan", "Dark Purple", "Dark red", "Forest Green", "Ghost",
+const listColors = ["BCH", "Blue", "Burnt Orange", "Cyan", "Dark Purple", "Dark Red", "Forest Green", "Ghost",
     "Green", "Grey", "Grimace", "Ground", "Midnight", "Orange", "Purple", "Red", "Sandstone", "Shadow", 
     "Sky Blue", "Swamp", "Toxic Green", "Yellow"];
 const listSpecials =["All Specials"]
