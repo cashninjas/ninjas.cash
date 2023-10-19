@@ -43,6 +43,10 @@
   src: URL('../SamuraiBlast.ttf') format('truetype');
 }
 
+
+.fa-chevron-double-right:before {
+  content: "\f101";}
+
 .blink_me {
   animation: blinker 1s linear infinite;
 }
