@@ -11,7 +11,9 @@
     content="Cash-Ninjas - A CashTokens NFT Collection, taking NFTs on Bitcoin Cash to the next level! Created by known BCH community members to help build out the CashTokens ecosystem.">
 
   <!-- Web Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Stylesheet
   ============================== -->
@@ -27,252 +29,279 @@
   <link id="color-switcher" type="text/css" rel="stylesheet" href="css/color-teal.css" />
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#header-nav" data-bs-smooth-scroll="true" data-bs-offset="0" class="hero-bg" style="background-image:url('images/bg.png');">
+<body data-bs-spy="scroll" data-bs-target="#header-nav" data-bs-smooth-scroll="true" data-bs-offset="0" class="hero-bg"
+  style="background-image:url('images/bg.png');">
 
-<!-- Preloader -->
-<div class="preloader preloader-dark">
-  <div class="lds-ellipsis">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-</div>
-<!-- Preloader End --> 
-
-<!-- Document Wrapper
-=============================== -->
-<div id="main-wrapper"> 
-  
-  <!-- Header
-  ============================ -->
-  <header id="header" class="sticky-top-slide">
-    <!-- Navbar -->
-    <nav class="primary-menu navbar navbar-expand-lg navbar-dark bg-primary fw-500 border-bottom-0">
-      <div class="container position-relative">
-        <div class="col-auto col-lg-auto">
-          <!-- Logo -->
-          <a class="logo" href="index.html" title="Cash-Ninjas"> <img src="images/logo.png" alt="Cash-Ninjas"
-              style="width: 55px" />
-            <h2 class="text-6 ls-5 text-white text-uppercase" style="margin-top: 10px; font-family: samurai;">
-              Cash-Ninjas</h2>
-          </a>
-          <!-- Logo End -->
-        </div>
-        <div class="col col-lg-10 navbar-accordion">
-          <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
-            data-bs-target="#header-nav"><span></span><span></span><span></span></button>
-          <div id="header-nav" class="collapse navbar-collapse justify-content-end">
-            <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link" href="/#home">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="./mint.html">Mint <sup>new</sup></a></li>
-              <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="/#team">Team</a></li>
-              <li class="nav-item"><a class="nav-link active" href="./collection.html">Collection <sup>new</sup></a></li>
-              <li class="nav-item"><a class="nav-link" href="/#clans">Clans</a></li>
-              <li class="nav-item"><a class="nav-link" href="/#roadmap">Roadmap</a></li>
-              <li class="nav-item h-auto"><a class="nav-link" href="/#faq">FAQ</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <!-- Navbar End -->
-  </header>
-  <!-- Header End -->
-  
-  <!-- Content
-  ======================== -->
-  <div id="content" role="main"> 
-    
-    <!-- Page Heading -->
-    <div class="container pt-5" style="display: flex;">
-      <div class="position-relative d-flex text-center my-5 py-5" style="margin:auto;">
-        <div class="btn btn-lg btn-primary rounded-4" id="myCollectionButton" style="font-size: 1.25rem; margin: 0 5px;"> My Collection</div>
-        <div class="btn btn-light rounded-4" id="FullCollection" style="font-size: 1.25rem; margin: 0 5px;">Full Collection</div>
-      </div>
+  <!-- Preloader -->
+  <div class="preloader preloader-dark">
+    <div class="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-    <!-- Page Heading end-->
-    
-    <div class="container">
-      <div class="row g-5"> 
-        <!-- Side Panel
-		  ============================================= -->
-        <aside class="col-lg-3">
-          <div class="border border-secondary border-opacity-50 shadow rounded-4 p-3 pb-0">
-            <div class="accordion accordion-dark accordion-flush arrow-end mt-n3" id="toggleAlternate">
-              <!-- CheckboxList Markings -->
-              <div class="accordion-item">
-                <div class="accordion-header" id="nftaccessory">
-                  <button class="accordion-button d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#toggleNFTaccessory" aria-expanded="true" aria-controls="toggleNFTaccessory">
-                    Markings <small class="opacity-8"><span id="numberMarkings"></span></small>
-                  </button>
-                </div>
-                <div id="toggleNFTaccessory" class="accordion-collapse collapse show" aria-labelledby="nftaccessory">
-                  <div class="accordion-body px-0 mt-n2">
-                    <div id="listMarkings"></div>
-                  </div>
-                </div>
-              </div>
+  </div>
+  <!-- Preloader End -->
 
-              <!-- CheckboxList Weapons -->
-              <div class="accordion-item">
-                <div class="accordion-header" id="nftbackground">
-                  <button class="accordion-button collapsed d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#toggleNFTbackground" aria-expanded="false" aria-controls="toggleNFTbackground">
-                    Weapons <small class="opacity-8"><span id="numberWeapons"></span></small>
-                  </button>
-                </div>
-                <div id="toggleNFTbackground" class="accordion-collapse collapse" aria-labelledby="nftbackground">
-                  <div class="accordion-body px-0 mt-n2">
-                    <div id="listWeapons"></div>
-                  </div>
-                </div>
-              </div>
+  <!-- Document Wrapper
+=============================== -->
+  <div id="main-wrapper">
 
-              <!-- CheckboxList Backgrounds -->
-              <div class="accordion-item">
-                <div class="accordion-header" id="nftclothes">
-                  <button class="accordion-button collapsed d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#toggleNFTclothes" aria-expanded="false" aria-controls="toggleNFTclothes">
-                    Backgrounds <small class="opacity-8"><span id="numberBackgrounds"></span></small>
-                  </button>
-                </div>
-                <div id="toggleNFTclothes" class="accordion-collapse collapse" aria-labelledby="nftclothes">
-                  <div class="accordion-body px-0 mt-n2">
-                    <div id="listBackgrounds"></div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- CheckboxList Eyes -->
-              <div class="accordion-item">
-                <div class="accordion-header" id="nfteyes">
-                  <button class="accordion-button collapsed d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#toggleNFTeyes" aria-expanded="false" aria-controls="toggleNFTeyes">
-                    Eyes <small class="opacity-8"><span id="numberEyes"></span></small>
-                  </button>
-                </div>
-                <div id="toggleNFTeyes" class="accordion-collapse collapse" aria-labelledby="nfteyes">
-                  <div class="accordion-body px-0 mt-n2">
-                    <div id="listEyes"></div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- CheckboxList Primary Color -->
-              <div class="accordion-item">
-                <div class="accordion-header" id="nftmouth">
-                  <button class="accordion-button collapsed d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#toggleNFTmouth" aria-expanded="false" aria-controls="toggleNFTmouth">
-                    Primary Color <small class="opacity-8"><span id="numberColors1"></span></small>
-                  </button>
-                </div>
-                <div id="toggleNFTmouth" class="accordion-collapse collapse" aria-labelledby="nftmouth">
-                  <div class="accordion-body px-0 mt-n2">
-                    <div class="pre-scrollable pe-2">
-                      <div id="listColors1"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- CheckboxList Secondary Color -->
-              <div class="accordion-item">
-                <div class="accordion-header" id="nftskin">
-                  <button class="accordion-button collapsed d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#toggleNFTskin" aria-expanded="false" aria-controls="toggleNFTskin">
-                    Secondary Color <small class="opacity-8"><span id="numberColors2"></span></small>
-                  </button>
-                </div>
-                <div id="toggleNFTskin" class="accordion-collapse collapse" aria-labelledby="nftskin">
-                  <div class="accordion-body px-0 mt-n2">
-                    <div id="listColors2"></div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="accordion-item">
-                <div class="accordion-header" id="special">
-                  <button class="accordion-button collapsed d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#togglespecial" aria-expanded="false" aria-controls="toggleNFTskin">
-                    Specials <small class="opacity-8"><span id="numberSpecials"></span></small>
-                  </button>
-                </div>
-                <div id="togglespecial" class="accordion-collapse collapse" aria-labelledby="special">
-                  <div class="accordion-body px-0 mt-n2">
-                    <div class="form-check my-2">
-                      <div id="listSpecials"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <!-- Header
+  ============================ -->
+    <header id="header" class="sticky-top-slide">
+      <!-- Navbar -->
+      <nav class="primary-menu navbar navbar-expand-lg navbar-dark bg-primary fw-500 border-bottom-0">
+        <div class="container position-relative">
+          <div class="col-auto col-lg-auto">
+            <!-- Logo -->
+            <a class="logo" href="index.html" title="Cash-Ninjas"> <img src="images/logo.png" alt="Cash-Ninjas"
+                style="width: 55px" />
+              <h2 class="text-6 ls-5 text-white text-uppercase" style="margin-top: 10px; font-family: samurai;">
+                Cash-Ninjas</h2>
+            </a>
+            <!-- Logo End -->
+          </div>
+          <div class="col col-lg-10 navbar-accordion">
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+              data-bs-target="#header-nav"><span></span><span></span><span></span></button>
+            <div id="header-nav" class="collapse navbar-collapse justify-content-end">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="/#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="./mint.html">Mint <sup>new</sup></a></li>
+                <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#team">Team</a></li>
+                <li class="nav-item"><a class="nav-link active" href="./collection.html">Collection <sup>new</sup></a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/#clans">Clans</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#roadmap">Roadmap</a></li>
+                <li class="nav-item h-auto"><a class="nav-link" href="/#faq">FAQ</a></li>
+              </ul>
             </div>
-          </div>
-        </aside>
-        <!-- Side Panel end -->
-
-        <!-- Rendering Template CheckBox ============================================= -->
-        <template id="checkbox-template">
-          <div class="form-check my-2">
-            <input class="form-check-input" type="checkbox" name="checkbox" id="idInput">
-            <label class="form-check-label d-flex justify-content-between align-items-center" id="forIdInput" for="idInput">
-              <span id="itemAttribute"></span>
-              <small id="itemCount" class="opacity-8"></small>
-            </label>
-          </div>
-        </template>
-        <!-- Rendering Template CheckBox-->
-        
-
-        <!-- NinjaList
-          ============================================= -->
-        <div class="col-lg-9">
-          <div class="col-lg-12">
-            <div id="PlaceholderNinjaList"></div>
           </div>
         </div>
+      </nav>
+      <!-- Navbar End -->
+    </header>
+    <!-- Header End -->
 
-        <!-- Rendering Template Ninjas
-          ============================================= -->
-        <template id="ninja-template">
-          <div class="col-sm-5 col-md-3 mb-3 cashninja">
-            <div id="attributeClasses"></div>
-            <div class="position-relative bg-dark-2 shadow rounded-4" style="width: fit-content; margin: auto;"> 
-              <img class="img-fluid d-flex rounded-4 rounded-bottom-0" id="ninjaImage" src="/images/unknown.jpg" style="margin: auto;">
-              <div class="p-4" style="max-width: 256px;">
-                <div class="d-flex align-items-center justify-content-center">
-                  <h4 id="ninjaName" class="text-3 link-light text-truncate mb-0" style="white-space: normal; min-height: 60px; text-align: center;"></h4>
+    <!-- Content
+  ======================== -->
+    <div id="content" role="main">
+
+      <!-- Page Heading -->
+      <div class="container pt-5" style="display: flex;">
+        <div class="position-relative d-flex text-center my-5 py-5" style="margin:auto;">
+          <div class="btn btn-lg btn-primary rounded-4" id="myCollectionButton"
+            style="font-size: 1.25rem; margin: 0 5px;"> My Collection</div>
+          <div class="btn btn-light rounded-4" id="FullCollection" style="font-size: 1.25rem; margin: 0 5px;">Full
+            Collection</div>
+        </div>
+      </div>
+      <!-- Page Heading end-->
+
+      <div class="container">
+        <div class="row g-5">
+          <!-- Side Panel
+		  ============================================= -->
+          <aside class="col-lg-3">
+            <div class="border border-secondary border-opacity-50 shadow rounded-4 p-3 pb-0">
+              <div class="accordion accordion-dark accordion-flush arrow-end mt-n3" id="toggleAlternate">
+                <!-- CheckboxList Markings -->
+                <div class="accordion-item">
+                  <div class="accordion-header" id="nftaccessory">
+                    <button class="accordion-button d-flex justify-content-between align-items-center" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#toggleNFTaccessory" aria-expanded="true"
+                      aria-controls="toggleNFTaccessory">
+                      Markings <small class="opacity-8"><span id="numberMarkings"></span></small>
+                    </button>
+                  </div>
+                  <div id="toggleNFTaccessory" class="accordion-collapse collapse show" aria-labelledby="nftaccessory">
+                    <div class="accordion-body px-0 mt-n2">
+                      <div id="listMarkings"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CheckboxList Weapons -->
+                <div class="accordion-item">
+                  <div class="accordion-header" id="nftbackground">
+                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center"
+                      type="button" data-bs-toggle="collapse" data-bs-target="#toggleNFTbackground"
+                      aria-expanded="false" aria-controls="toggleNFTbackground">
+                      Weapons <small class="opacity-8"><span id="numberWeapons"></span></small>
+                    </button>
+                  </div>
+                  <div id="toggleNFTbackground" class="accordion-collapse collapse" aria-labelledby="nftbackground">
+                    <div class="accordion-body px-0 mt-n2">
+                      <div id="listWeapons"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CheckboxList Backgrounds -->
+                <div class="accordion-item">
+                  <div class="accordion-header" id="nftclothes">
+                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center"
+                      type="button" data-bs-toggle="collapse" data-bs-target="#toggleNFTclothes" aria-expanded="false"
+                      aria-controls="toggleNFTclothes">
+                      Backgrounds <small class="opacity-8"><span id="numberBackgrounds"></span></small>
+                    </button>
+                  </div>
+                  <div id="toggleNFTclothes" class="accordion-collapse collapse" aria-labelledby="nftclothes">
+                    <div class="accordion-body px-0 mt-n2">
+                      <div id="listBackgrounds"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CheckboxList Eyes -->
+                <div class="accordion-item">
+                  <div class="accordion-header" id="nfteyes">
+                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center"
+                      type="button" data-bs-toggle="collapse" data-bs-target="#toggleNFTeyes" aria-expanded="false"
+                      aria-controls="toggleNFTeyes">
+                      Eyes <small class="opacity-8"><span id="numberEyes"></span></small>
+                    </button>
+                  </div>
+                  <div id="toggleNFTeyes" class="accordion-collapse collapse" aria-labelledby="nfteyes">
+                    <div class="accordion-body px-0 mt-n2">
+                      <div id="listEyes"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CheckboxList Primary Color -->
+                <div class="accordion-item">
+                  <div class="accordion-header" id="nftmouth">
+                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center"
+                      type="button" data-bs-toggle="collapse" data-bs-target="#toggleNFTmouth" aria-expanded="false"
+                      aria-controls="toggleNFTmouth">
+                      Primary Color <small class="opacity-8"><span id="numberColors1"></span></small>
+                    </button>
+                  </div>
+                  <div id="toggleNFTmouth" class="accordion-collapse collapse" aria-labelledby="nftmouth">
+                    <div class="accordion-body px-0 mt-n2">
+                      <div class="pre-scrollable pe-2">
+                        <div id="listColors1"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CheckboxList Secondary Color -->
+                <div class="accordion-item">
+                  <div class="accordion-header" id="nftskin">
+                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center"
+                      type="button" data-bs-toggle="collapse" data-bs-target="#toggleNFTskin" aria-expanded="false"
+                      aria-controls="toggleNFTskin">
+                      Secondary Color <small class="opacity-8"><span id="numberColors2"></span></small>
+                    </button>
+                  </div>
+                  <div id="toggleNFTskin" class="accordion-collapse collapse" aria-labelledby="nftskin">
+                    <div class="accordion-body px-0 mt-n2">
+                      <div id="listColors2"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <div class="accordion-header" id="special">
+                    <button class="accordion-button collapsed d-flex justify-content-between align-items-center"
+                      type="button" data-bs-toggle="collapse" data-bs-target="#togglespecial" aria-expanded="false"
+                      aria-controls="toggleNFTskin">
+                      Specials <small class="opacity-8"><span id="numberSpecials"></span></small>
+                    </button>
+                  </div>
+                  <div id="togglespecial" class="accordion-collapse collapse" aria-labelledby="special">
+                    <div class="accordion-body px-0 mt-n2">
+                      <div class="form-check my-2">
+                        <div id="listSpecials"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+          </aside>
+          <!-- Side Panel end -->
+
+          <!-- Rendering Template CheckBox ============================================= -->
+          <template id="checkbox-template">
+            <div class="form-check my-2">
+              <input class="form-check-input" type="checkbox" name="checkbox" id="idInput">
+              <label class="form-check-label d-flex justify-content-between align-items-center" id="forIdInput"
+                for="idInput">
+                <span id="itemAttribute"></span>
+                <small id="itemCount" class="opacity-8"></small>
+              </label>
+            </div>
+          </template>
+          <!-- Rendering Template CheckBox-->
+
+
+          <!-- NinjaList
+          ============================================= -->
+          <div class="col-lg-9">
+            <div class="col-lg-12">
+              <div id="PlaceholderNinjaList"></div>
+            </div>
           </div>
-        </template>
-        <!-- Rendering Template Ninjas-->
+
+          <!-- Rendering Template Ninjas
+          ============================================= -->
+          <template id="ninja-template">
+            <div class="col-sm-5 col-md-3 mb-3 cashninja">
+              <div id="attributeClasses"></div>
+              <div class="position-relative bg-dark-2 shadow rounded-4" style="width: fit-content; margin: auto;">
+                <img class="img-fluid d-flex rounded-4 rounded-bottom-0" id="ninjaImage" src="/images/unknown.jpg"
+                  style="margin: auto;">
+                <div class="p-4" style="max-width: 256px;">
+                  <div class="d-flex align-items-center justify-content-center">
+                    <h4 id="ninjaName" class="text-3 link-light text-truncate mb-0"
+                      style="white-space: normal; min-height: 60px; text-align: center;"></h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+          <!-- Rendering Template Ninjas-->
 
           <!-- Pagination
-            =============================================  --> 
+            =============================================  -->
           <ul class="pagination pagination-lg justify-content-center mt-5 mb-0" style="display: none;">
-            <li class="page-item" id="previousPage"> <a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-left"></i></a> </li>
+            <li class="page-item" id="previousPage"> <a class="page-link" href="#" tabindex="-1"><i
+                  class="fas fa-angle-left"></i></a> </li>
             <li class="page-item active" id="pageOne"><a class="page-link" href="#">1</a></li>
             <li class="page-item" id="pageTwo"><a class="page-link" href="#">2</a></li>
-            <li id="startingDots" style="display: none;" class="page-item align-content-center flex-wrap text-muted text-5 mx-1">......</li>
+            <li id="startingDots" style="display: none;"
+              class="page-item align-content-center flex-wrap text-muted text-5 mx-1">......</li>
             <li class="page-item" id="pageMiddle"><a class="page-link" href="#">3</a></li>
             <li id="endingDots" class="page-item align-content-center flex-wrap text-muted text-5 mx-1">......</li>
             <li class="page-item" id="pageLast"><a class="page-link" href="#">50</a></li>
-            <li class="page-item" id="nextPage"> <a class="page-link" href="#"><i class="fas fa-angle-right"></i></a> </li>
-            <li class="page-item" id="skipPages"> <a class="page-link" href="#"><i class="fas fa-chevron-double-right"></i></a> </li>
+            <li class="page-item" id="nextPage"> <a class="page-link" href="#"><i class="fas fa-angle-right"></i></a>
+            </li>
+            <li class="page-item" id="skipPages"> <a class="page-link" href="#"><i
+                  class="fas fa-chevron-double-right"></i></a> </li>
           </ul>
-          <!--  Paginations end --> 
+          <!--  Paginations end -->
 
           <!-- Rendering Template CheckBox ============================================= -->
-        <template id="checkbox-template">
-          <li class="page-item"><div class="page-link" id="number"></div></li>
-        </template>
-        <!-- Rendering Template CheckBox-->
-          
+          <template id="checkbox-template">
+            <li class="page-item">
+              <div class="page-link" id="number"></div>
+            </li>
+          </template>
+          <!-- Rendering Template CheckBox-->
+
         </div>
       </div>
     </div>
-    
+
   </div>
-  <!-- Content end --> 
-  
-    <!-- Footer
+  <!-- Content end -->
+
+  <!-- Footer
   ============================== -->
   <footer id="footer" class="section footer-dark my-4">
     <div class="container">
@@ -281,8 +310,8 @@
         <li class="social-icons-telegram"><a class="rounded-4" data-bs-toggle="tooltip" href="https://t.me/cashninjas"
             target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a></li>
         <li class="social-icons-twitter"><a class="rounded-4" data-bs-toggle="tooltip"
-            href="https://twitter.com/cashninjasbch" target="_blank" title="Twitter"><i
-              class="fab fa-twitter"></i></a></li>
+            href="https://twitter.com/cashninjasbch" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        </li>
         <li class="social-icons-youtube"><a class="rounded-4" data-bs-toggle="tooltip"
             href="https://www.youtube.com/@CashNinjasBCH" target="_blank" title="Youtube"><i
               class="fab fa-youtube"></i></a></li>
@@ -295,21 +324,23 @@
     </div>
   </footer>
   <!-- Footer end -->
-  
-</div>
-<!-- Document Wrapper end --> 
 
-<!-- Back to Top
-============================== --> 
-<a id="back-to-top" data-bs-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a> 
+  </div>
+  <!-- Document Wrapper end -->
 
-<!-- JavaScript --> 
-<script src="js/collection.js" type="module"></script>
-<script src="vendor/jquery/jquery.min.js"></script> 
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> 
-<!-- Owl Carousel --> 
-<script src="vendor/owl.carousel/owl.carousel.min.js"></script> 
-<!-- Custom Script --> 
-<script src="js/theme.js" type="module"></script>
+  <!-- Back to Top
+============================== -->
+  <a id="back-to-top" data-bs-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i
+      class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript -->
+  <script src="js/collection.js" type="module"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Owl Carousel -->
+  <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+  <!-- Custom Script -->
+  <script src="js/theme.js" type="module"></script>
 </body>
+
 </html>
