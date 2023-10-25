@@ -178,7 +178,7 @@ async function mintNFT(mintIndex, mintTotal) {
     const fetchPromiseMint = await fetch(urlApiServer + "/mint");
     const fetchResultMint = await fetchPromiseMint.json();
     const selectedCommitment = fetchResultMint.availableMintingUtxo;
-    let mintUtxo = contractUtxos.find(utxo => utxo.token.category == tokenId && utxo.token.nft.commitment === selectedCommitment);
+    let mintUtxo = contractUtxos.find(utxo => utxo.token != undefined && utxo.token.category == tokenId && utxo.token.nft.commitment === selectedCommitment);
     // if mintUtxo is undefined, refetch API server
     if (!mintUtxo) mintUtxo = await getAvailableMintUtxo();
     return mintUtxo;
