@@ -4,7 +4,7 @@ import { ElectrumCluster, ElectrumTransport } from 'electrum-cash';
 import { ElectrumNetworkProvider } from "cashscript";
 import { projectId, urlApiServer, tokenId, network, wcMetadata } from "/js/mintingParams.js";
 import { bigIntToVmNumber, binToHex, hexToBin, vmNumberToBigInt } from '@bitauth/libauth';
-import { listMarkings, listWeapons, listBackgrounds, listEyes, listColors, listSpecials } from "/js/attributes.js"
+import { listMarkings, listWeapons, listBackgrounds, listEyes, listColors, listSpecials } from "/js/attributes.js";
 
 // Read URL Params
 const urlParams = new URLSearchParams(window.location.search);
@@ -46,12 +46,12 @@ checkboxLists.forEach((checkboxList, index) => {
     checkbox.setAttribute("id", attributeString);
     const label = checkboxTemplate.getElementById("forIdInput");
     label.setAttribute("for", attributeString);
-    checkbox.onclick = () => displayNinjas()
+    checkbox.onclick = () => displayNinjas();
     // Add checkboxTemplate to list
     divCheckboxList.appendChild(checkboxTemplate);
   });
   Placeholder.replaceWith(divCheckboxList);
-})
+});
 
 // Fetch full BCMR file from server
 const fetchBcmrPromise = await fetch(urlApiServer + "/.well-known/bitcoin-cash-metadata-registry.json");
@@ -107,7 +107,7 @@ const requiredNamespaces = {
 
 // Try to reconnect to previous session on startup
 let session;
-if (lastSession && !urlParamAddr && !displayFullCollection) setTimeout(async() => {
+if (lastSession && !urlParamAddr && !displayFullCollection) setTimeout(async () => {
   const confirmReuse = confirm("The collection page is going to re-use your previous WalletConnect session, make sure you have your wallet open");
   if (confirmReuse) {
     session = lastSession;
@@ -116,19 +116,19 @@ if (lastSession && !urlParamAddr && !displayFullCollection) setTimeout(async() =
 }, 500);
 
 // If urlParam has address, load collection 
-if(urlParamAddr) setTimeout(async() => {
+if (urlParamAddr) setTimeout(async () => {
   const listCashninjas = await getNinjasOnAddr(urlParamAddr);
   updateCollection(listCashninjas);
   displayNinjas();
-  }, 500
+}, 500
 );
 
-if(displayFullCollection) setTimeout(async() => {
+if (displayFullCollection) setTimeout(async () => {
   let allNinjaNumbers = [];
-  for (let i = 1; i <= 5000; i++) {allNinjaNumbers.push(i);}
+  for (let i = 1; i <= 5000; i++) { allNinjaNumbers.push(i); }
   updateCollection(allNinjaNumbers);
   displayNinjas();
-  }, 500
+}, 500
 );
 
 // Global variables
@@ -141,13 +141,13 @@ const myCollectionButton = document.getElementById("myCollectionButton");
 fullCollectionButton.onclick = () => {
   window.history.replaceState({}, "", `${location.pathname}?fullcollection`);
   let allNinjaNumbers = [];
-  for (let i = 1; i <= 5000; i++) {allNinjaNumbers.push(i);}
+  for (let i = 1; i <= 5000; i++) { allNinjaNumbers.push(i); }
   updateCollection(allNinjaNumbers);
   displayNinjas();
-}
-myCollectionButton.onclick = async() => {
-  if(session) fetchUserNinjas();
-  else if (lastSession && !urlParamAddr){
+};
+myCollectionButton.onclick = async () => {
+  if (session) fetchUserNinjas();
+  else if (lastSession && !urlParamAddr) {
     const confirmReuse = confirm("The collection page is going to re-use your previous WalletConnect session, make sure you have your wallet open");
     if (confirmReuse) {
       session = lastSession;
@@ -162,9 +162,9 @@ myCollectionButton.onclick = async() => {
     walletConnectModal.closeModal();
     fetchUserNinjas();
   };
-}
+};
 async function fetchUserNinjas() {
-  if(!ninjasConnectedWallet.length){
+  if (!ninjasConnectedWallet.length) {
     const userAddress = await getUserAddress();
     connectedUserAddress = userAddress;
     const listCashninjas = await getNinjasOnAddr(userAddress);
@@ -175,25 +175,25 @@ async function fetchUserNinjas() {
   displayNinjas();
 }
 
-async function getNinjasOnAddr(address){
+async function getNinjasOnAddr(address) {
   const userUtxos = await electrumServer.getUtxos(address);
   const cashNinjaUtxos = userUtxos.filter(val => val?.token?.category == tokenId);
   const listCashninjas = [];
   cashNinjaUtxos.forEach(ninjaUtxo => {
-    const ninjaCommitment = ninjaUtxo.token.nft.commitment
+    const ninjaCommitment = ninjaUtxo.token.nft.commitment;
     const ninjaNumber = vmNumberToBigInt(hexToBin(ninjaCommitment)) + 1n;
-    listCashninjas.push(Number(ninjaNumber))
-  })
-  return listCashninjas
+    listCashninjas.push(Number(ninjaNumber));
+  });
+  return listCashninjas;
 }
 
-async function displayNinjas(offset = 0){
+async function displayNinjas(offset = 0) {
   const filteredNinjaList = filterNinjaList(unfilteredListNinjas);
   const listNinjas = filteredNinjaList.sort((a, b) => a - b);
   const startPoint = offset * 100;
   const slicedArray = listNinjas.slice(startPoint, startPoint + 100);
   // Pagination logic
-  renderPagination(offset,filteredNinjaList.length);
+  renderPagination(offset, filteredNinjaList.length);
 
   // Create the HTML rendering setup
   const Placeholder = document.getElementById("PlaceholderNinjaList");
@@ -207,7 +207,7 @@ async function displayNinjas(offset = 0){
     const ninjaImage = ninjaTemplate.getElementById("ninjaImage");
     ninjaImage.src = urlApiServer + '/icons/' + ninjaNumber;
     const ninjaName = ninjaTemplate.getElementById("ninjaName");
-    const ninjaCommitment = binToHex(bigIntToVmNumber(BigInt(ninjaNumber -1)));
+    const ninjaCommitment = binToHex(bigIntToVmNumber(BigInt(ninjaNumber - 1)));
     const ninjaData = nftMetadata[ninjaCommitment];
     ninjaName.textContent = ninjaData?.name ?? `Ninja #${ninjaNumber}`;
     ninjaList.appendChild(ninjaTemplate);
@@ -216,20 +216,20 @@ async function displayNinjas(offset = 0){
 }
 
 async function getUserAddress() {
-    try {
-      const result = await signClient.request({
-        chainId: connectedChain,
-        topic: session.topic,
-        request: {
-          method: "bch_getAddresses",
-          params: {},
-        },
-      });
-      return result[0];
-    } catch (error) {
-      return undefined;
-    }
-  };
+  try {
+    const result = await signClient.request({
+      chainId: connectedChain,
+      topic: session.topic,
+      request: {
+        method: "bch_getAddresses",
+        params: {},
+      },
+    });
+    return result[0];
+  } catch (error) {
+    return undefined;
+  }
+};
 
 function updateCollection(newCollection) {
   unfilteredListNinjas = newCollection;
@@ -237,113 +237,113 @@ function updateCollection(newCollection) {
   const attributeObjs = {};
   attributeKeys.forEach(attributeKey => {
     attributeObjs[attributeKey] = {};
-  })
-  
+  });
+
   // Create count of occurance for each attribute
   unfilteredListNinjas.forEach(ninjaNumber => {
-    const ninjaCommitment = binToHex(bigIntToVmNumber(BigInt(ninjaNumber -1)));
+    const ninjaCommitment = binToHex(bigIntToVmNumber(BigInt(ninjaNumber - 1)));
     const ninjaData = nftMetadata[ninjaCommitment];
     const ninjaAttributes = ninjaData?.extensions.attributes;
 
-    if(ninjaData){
+    if (ninjaData) {
       let attributeClasses = "attributeClasses";
       Object.keys(ninjaAttributes).forEach((attributeKey, index) => {
         const attibuteObj = attributeObjs[attributeKey];
         const attributeValue = ninjaAttributes[attributeKey];
         let attributeClass = " " + (attributeKey + attributeValue).replace(/\s/g, '_');
-        if(attributeKey == "Specials") attributeClass = " Specials";
+        if (attributeKey == "Specials") attributeClass = " Specials";
         attributeClasses += attributeClass;
-        if(attibuteObj[attributeValue]) attibuteObj[attributeValue] += 1;
+        if (attibuteObj[attributeValue]) attibuteObj[attributeValue] += 1;
         else attibuteObj[attributeValue] = 1;
-      })
+      });
     }
   });
 
   // Display total counts
-  attributeNames.forEach((attributeName,index) => {
+  attributeNames.forEach((attributeName, index) => {
     const idTotalCount = "number" + attributeName;
     const totalCountDiv = document.getElementById(idTotalCount);
     const attibuteObj = attributeObjs[attributeKeys[index]];
     const countUniqueItems = Object.keys(attibuteObj).length;
-    const countDisplayString = (idTotalCount != "numberSpecials")? countUniqueItems + "/" + itemsPerAttributeList[index] : countUniqueItems;
+    const countDisplayString = (idTotalCount != "numberSpecials") ? countUniqueItems + "/" + itemsPerAttributeList[index] : countUniqueItems;
     totalCountDiv.textContent = countDisplayString;
-  })
+  });
 
   // display Indvidual Counts
   checkboxLists.forEach((checkboxList, index) => {
     checkboxList.forEach(listItem => {
-      const attributeKey= attributeKeys[index];
+      const attributeKey = attributeKeys[index];
       const attributeString = (attributeKey + listItem).replace(/\s/g, '_');
       const itemCountElem = document.getElementById("itemCount" + attributeString);
       const attibuteObj = attributeObjs[attributeKey];
       let itemCount = attibuteObj[listItem];
-      if(listItem == "All Specials") itemCount = Object.keys(attributeObjs[attributeKey]).length
+      if (listItem == "All Specials") itemCount = Object.keys(attributeObjs[attributeKey]).length;
       itemCountElem.textContent = itemCount ?? 0;
     });
-  })
+  });
 }
 
-function renderPagination(offset, listLength){
+function renderPagination(offset, listLength) {
   const paginationDiv = document.querySelector(".pagination");
   const nrOfPages = Math.ceil(listLength / 100);
-  if(nrOfPages <= 1){
+  if (nrOfPages <= 1) {
     paginationDiv.style.display = "none";
-    return
+    return;
   }
   paginationDiv.style.display = "flex";
   // Show buttons by default
-  ["pageLast","pageMiddle","skipPages","pageLast"].forEach(elem => {
+  ["pageLast", "pageMiddle", "skipPages", "pageLast"].forEach(elem => {
     document.getElementById(elem).style.display = "block";
-  })
+  });
   document.getElementById("endingDots").style.display = "flex";
   // Hide page buttons depending on the nrOfPages
   document.getElementById("pageLast").firstChild.textContent = nrOfPages;
-  if(nrOfPages <= 4) document.getElementById("endingDots").style.display = "none";
-  if(nrOfPages <= 3) document.getElementById("pageMiddle").style.display = "none";
-  if(nrOfPages == 2) {
+  if (nrOfPages <= 4) document.getElementById("endingDots").style.display = "none";
+  if (nrOfPages <= 3) document.getElementById("pageMiddle").style.display = "none";
+  if (nrOfPages == 2) {
     document.getElementById("skipPages").style.display = "none";
     document.getElementById("pageLast").style.display = "none";
   }
   // Page button functionality
-  const pageButtons = ["pageOne","pageTwo","pageMiddle","pageLast"]
+  const pageButtons = ["pageOne", "pageTwo", "pageMiddle", "pageLast"];
   const setActiveButton = (activePageButton) => {
     pageButtons.forEach(pageButton => {
-      const pageButtonElem = document.getElementById(pageButton)
-      if(pageButton != activePageButton) pageButtonElem.classList.remove("active");
+      const pageButtonElem = document.getElementById(pageButton);
+      if (pageButton != activePageButton) pageButtonElem.classList.remove("active");
       else pageButtonElem.classList.add("active");
-    })
-  }
+    });
+  };
   // Logic for numbering, highlighting & dots
-  const changeActivePage = (pageNumber,nrOfPages) => {
-    let activePageButton
-    if(pageNumber == 1) activePageButton = pageButtons[0];
-    else if(pageNumber == 2) activePageButton = pageButtons[1];
-    else if(pageNumber == nrOfPages) activePageButton = pageButtons[3];
-    else{
+  const changeActivePage = (pageNumber, nrOfPages) => {
+    let activePageButton;
+    if (pageNumber == 1) activePageButton = pageButtons[0];
+    else if (pageNumber == 2) activePageButton = pageButtons[1];
+    else if (pageNumber == nrOfPages) activePageButton = pageButtons[3];
+    else {
       activePageButton = pageButtons[2];
       document.getElementById(activePageButton).firstChild.textContent = pageNumber;
       const startingDots = document.getElementById("startingDots");
       const endingDots = document.getElementById("endingDots");
-      if(pageNumber == 3) startingDots.style.display = "none";
+      if (pageNumber == 3) startingDots.style.display = "none";
       else startingDots.style.display = "flex";
-      if(pageNumber == nrOfPages - 1) endingDots.style.display = "none";
+      if (pageNumber == nrOfPages - 1) endingDots.style.display = "none";
       else endingDots.style.display = "flex";
     }
     setActiveButton(activePageButton);
     displayNinjas(pageNumber - 1);
-  }
+  };
   // reset active page button after filtering
-  if(offset == 0) setActiveButton("pageOne")
+  if (offset == 0) setActiveButton("pageOne");
   // onclick events buttons
   pageButtons.forEach(pageButton => {
     const pageButtonElem = document.getElementById(pageButton);
     pageButtonElem.onclick = () => changeActivePage(+pageButtonElem.textContent, nrOfPages);
-  })
+  });
   // Previous page button functionality
   const previousPageButton = document.getElementById("previousPage");
-  if(offset == 0) {
+  if (offset == 0) {
     previousPageButton.classList.add("disabled");
-    previousPageButton.onclick = () => {}
+    previousPageButton.onclick = () => { };
   } else {
     const pageNumber = offset + 1;
     previousPageButton.onclick = () => changeActivePage(pageNumber - 1, nrOfPages);
@@ -352,29 +352,29 @@ function renderPagination(offset, listLength){
   // Next page button functionality
   const nextPageButton = document.getElementById("nextPage");
   const startPoint = offset * 100;
-  if(startPoint + 100 >= listLength){
-    nextPageButton.classList.add("disabled")
-    nextPageButton.onclick = () => {}
+  if (startPoint + 100 >= listLength) {
+    nextPageButton.classList.add("disabled");
+    nextPageButton.onclick = () => { };
   } else {
     const pageNumber = offset + 1;
-    nextPageButton.onclick = () => changeActivePage(pageNumber + 1, nrOfPages)
-    nextPageButton.classList.remove("disabled")
+    nextPageButton.onclick = () => changeActivePage(pageNumber + 1, nrOfPages);
+    nextPageButton.classList.remove("disabled");
   }
   // Skip pages button functionality
   const skipPagesButton = document.getElementById("skipPages");
-  if(startPoint + 100 >= listLength){
-    skipPagesButton.classList.add("disabled")
-    skipPagesButton.onclick = () => {}
+  if (startPoint + 100 >= listLength) {
+    skipPagesButton.classList.add("disabled");
+    skipPagesButton.onclick = () => { };
   } else {
     const pageNumber = offset + 1;
-    const newPageNr = (pageNumber + 10 < nrOfPages)? pageNumber + 10 : nrOfPages
-    skipPagesButton.onclick = () => changeActivePage(newPageNr, nrOfPages)
-    skipPagesButton.classList.remove("disabled")
+    const newPageNr = (pageNumber + 10 < nrOfPages) ? pageNumber + 10 : nrOfPages;
+    skipPagesButton.onclick = () => changeActivePage(newPageNr, nrOfPages);
+    skipPagesButton.classList.remove("disabled");
   }
 }
 
 // Fuctions for filtering the NinjaList
-function filterNinjaList(listCashninjas){
+function filterNinjaList(listCashninjas) {
   const checkboxes = document.getElementsByName("checkbox");
   // Keeps track of the filtering, updated after each category
   let filteredNinjaList = listCashninjas;
@@ -384,30 +384,30 @@ function filterNinjaList(listCashninjas){
     // Keeps track of the items in a category, becomes new filteredNinjaList at end of category and starts fresh again
     let categoryList = [];
     let hasFiltered = false;
-    for(let i= 0; i < nrItems; i++ ){
+    for (let i = 0; i < nrItems; i++) {
       const checkboxNr = sumItemCountCategories + i;
       const checkbox = checkboxes[checkboxNr];
       if (checkbox.checked) {
         hasFiltered = true;
         const categoryToFilterOn = attributeKeys[categoryNr];
         const classToFilter = checkbox.id;
-        const attributeToFilterOn = classToFilter.replace(/_/g, ' ').replace(categoryToFilterOn,"");
+        const attributeToFilterOn = classToFilter.replace(/_/g, ' ').replace(categoryToFilterOn, "");
         // Filters the current NFT list
         filteredNinjaList.forEach(ninjaNumber => {
           const ninjaCommitment = binToHex(bigIntToVmNumber(BigInt(ninjaNumber - 1)));
           const ninjaData = nftMetadata[ninjaCommitment];
           const ninjaAttributes = ninjaData?.extensions.attributes;
           // Only run these check for ninja numbers with metadata available
-          if(ninjaAttributes){
-            if(ninjaAttributes[categoryToFilterOn] == attributeToFilterOn) categoryList.push(ninjaNumber);
-            if(categoryToFilterOn == "Specials" && ninjaAttributes[categoryToFilterOn]) categoryList.push(ninjaNumber)
+          if (ninjaAttributes) {
+            if (ninjaAttributes[categoryToFilterOn] == attributeToFilterOn) categoryList.push(ninjaNumber);
+            if (categoryToFilterOn == "Specials" && ninjaAttributes[categoryToFilterOn]) categoryList.push(ninjaNumber);
           }
-        })
+        });
       }
     }
     // If category has filtered, set new filteredList for next category
-    if(hasFiltered) filteredNinjaList = categoryList;
+    if (hasFiltered) filteredNinjaList = categoryList;
     sumItemCountCategories += nrItems;
   }
-  return filteredNinjaList
+  return filteredNinjaList;
 }
