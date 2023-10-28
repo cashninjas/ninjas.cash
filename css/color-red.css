@@ -15,15 +15,20 @@ a:active {
   color: #ca2333;
 }
 
-.primary-menu ul.navbar-nav>li:hover>.nav-link:not(.btn):not(.active) {
+.primary-menu ul.navbar-nav > li:hover > .nav-link:not(.btn):not(.active) {
   color: #dc3545;
 }
 
-.primary-menu ul.navbar-nav>li>.nav-link:not(.btn):before {
+.primary-menu ul.navbar-nav > li > .nav-link:not(.btn):before {
   border-bottom: 2px solid #dc3545;
 }
 
-.primary-menu ul.navbar-nav>li.dropdown .dropdown-menu li:hover>a:not(.btn) {
+.primary-menu
+  ul.navbar-nav
+  > li.dropdown
+  .dropdown-menu
+  li:hover
+  > a:not(.btn) {
   color: #dc3545;
 }
 
@@ -33,7 +38,7 @@ a:active {
 }
 
 /* Page Header */
-.page-header.page-header-text-dark .breadcrumb>li a:hover {
+.page-header.page-header-text-dark .breadcrumb > li a:hover {
   color: #dc3545;
 }
 
@@ -69,7 +74,7 @@ a:active {
 }
 
 /* Brands Grid */
-.brands-grid>.row>div a:hover {
+.brands-grid > .row > div a:hover {
   color: #dc3545;
 }
 
@@ -191,17 +196,17 @@ button.bg-primary:hover {
 
 .progress-bar,
 .nav-pills .nav-link.active,
-.nav-pills .show>.nav-link,
+.nav-pills .show > .nav-link,
 .dropdown-item.active,
 .dropdown-item:active {
   background-color: #dc3545;
 }
 
 .page-item.active .page-link,
-.custom-radio .custom-control-input:checked~.custom-control-label:before,
-.custom-control-input:checked~.custom-control-label::before,
-.custom-checkbox .custom-control-input:checked~.custom-control-label:before,
-.custom-control-input:checked~.custom-control-label:before {
+.custom-radio .custom-control-input:checked ~ .custom-control-label:before,
+.custom-control-input:checked ~ .custom-control-label::before,
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label:before,
+.custom-control-input:checked ~ .custom-control-label:before {
   background-color: #dc3545;
   border-color: #dc3545;
 }

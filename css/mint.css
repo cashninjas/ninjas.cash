@@ -5,19 +5,19 @@
 	Overwriting Default Theme Styles for Better Hanlding Updates
 -----------------------------------------------------------------*/
 .displayMobile {
-	display: none;
+  display: none;
 }
 
 @media (max-width: 980px) {
-	.displayMobile {
-		display: block;
-	}
+  .displayMobile {
+    display: block;
+  }
 
-	.hideMobile {
-		display: none;
-	}
+  .hideMobile {
+    display: none;
+  }
 
-	.noMarginMobile {
-		margin: 0;
-	}
+  .noMarginMobile {
+    margin: 0;
+  }
 }
