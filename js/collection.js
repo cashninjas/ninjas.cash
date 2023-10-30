@@ -200,19 +200,26 @@ async function displayNinjas(offset = 0) {
   const ninjaList = document.createElement("div");
   ninjaList.setAttribute("id", "PlaceholderNinjaList");
   ninjaList.classList.add("g-6", "row");
-  const template = document.getElementById("ninja-template");
-  // Render list of cashninjas
-  slicedArray.forEach(ninjaNumber => {
-    const ninjaTemplate = document.importNode(template.content, true);
-    const ninjaImage = ninjaTemplate.getElementById("ninjaImage");
-    ninjaImage.src = urlApiServer + '/icons/' + ninjaNumber;
-    const ninjaName = ninjaTemplate.getElementById("ninjaName");
-    const ninjaCommitment = binToHex(bigIntToVmNumber(BigInt(ninjaNumber - 1)));
-    const ninjaData = nftMetadata[ninjaCommitment];
-    ninjaName.textContent = ninjaData?.name ?? `Ninja #${ninjaNumber}`;
-    ninjaList.appendChild(ninjaTemplate);
-  });
-  Placeholder.replaceWith(ninjaList);
+  // Render no ninjas if they don't own any
+  if (slicedArray.length === 0) {
+    const template = document.getElementById("no-ninjas");
+    const noNinjasTemplate = document.importNode(template.content, true);
+    Placeholder.replaceWith(noNinjasTemplate);
+  } else {
+    // Render list of cashninjas
+    const template = document.getElementById("ninja-template");
+    slicedArray.forEach(ninjaNumber => {
+      const ninjaTemplate = document.importNode(template.content, true);
+      const ninjaImage = ninjaTemplate.getElementById("ninjaImage");
+      ninjaImage.src = urlApiServer + '/icons/' + ninjaNumber;
+      const ninjaName = ninjaTemplate.getElementById("ninjaName");
+      const ninjaCommitment = binToHex(bigIntToVmNumber(BigInt(ninjaNumber - 1)));
+      const ninjaData = nftMetadata[ninjaCommitment];
+      ninjaName.textContent = ninjaData?.name ?? `Ninja #${ninjaNumber}`;
+      ninjaList.appendChild(ninjaTemplate);
+    });
+    Placeholder.replaceWith(ninjaList);
+  }
 }
 
 async function getUserAddress() {
