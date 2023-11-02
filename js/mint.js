@@ -108,7 +108,7 @@ const contractParams = [
 ];
 
 // Create a custom 1-of-1 electrum cluster for bch-mainnet
-const electrumCluster = new ElectrumCluster('Electrum cluster example', '1.4.1', 1, 1);
+const electrumCluster = new ElectrumCluster('Cash-Ninjas', '1.4.1', 1, 1);
 electrumCluster.addServer('fulcrum.greyh.at', ElectrumTransport.WSS.Port, ElectrumTransport.WSS.Scheme);
 const electrum = network == "mainnet" ? electrumCluster : undefined;
 // Initialise cashscript ElectrumNetworkProvider
