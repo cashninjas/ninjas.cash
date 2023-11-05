@@ -216,6 +216,8 @@ async function displayNinjas(offset = 0) {
       const ninjaCommitment = binToHex(bigIntToVmNumber(BigInt(ninjaNumber - 1)));
       const ninjaData = nftMetadata[ninjaCommitment];
       ninjaName.textContent = ninjaData?.name ?? `Ninja #${ninjaNumber}`;
+      const viewerLink = ninjaTemplate.getElementById("viewerLink");
+      viewerLink.href = './viewer.html?id=' + ninjaNumber;
       ninjaList.appendChild(ninjaTemplate);
     });
     Placeholder.replaceWith(ninjaList);

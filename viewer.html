@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="images/favicon.png" rel="icon" />
+  <title>Cash-Ninjas - Minting Page</title>
+  <meta name="description"
+    content="Cash-Ninjas - A CashTokens NFT Collection, taking NFTs on Bitcoin Cash to the next level! Created by known BCH community members to help build out the CashTokens ecosystem.">
+
+  <!-- Web Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet
+============================== -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css" />
+  <!-- Font Awesome Icon -->
+  <link rel="stylesheet" type="text/css" href="/vendor/font-awesome/css/all.min.css" />
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" type="text/css" href="/vendor/owl.carousel/assets/owl.carousel.min.css" />
+  <!-- Template Stylesheet -->
+  <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+  <!-- Colors Css -->
+  <link id="color-switcher" type="text/css" rel="stylesheet" href="css/color-teal.css" />
+  <!-- Mint Css -->
+  <link id="color-switcher" type="text/css" rel="stylesheet" href="css/mint.css" />
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#header-nav" data-bs-smooth-scroll="true" data-bs-offset="0" class="hero-bg"
+  style="background-image:url('images/bg.png');">
+
+  <!-- Preloader -->
+  <div class="preloader preloader-dark">
+    <div class="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <!-- Preloader End -->
+
+  <!-- Document Wrapper
+=============================== -->
+  <div id="main-wrapper">
+
+    <!-- Header
+  ============================ -->
+    <header id="header" class="sticky-top-slide">
+      <!-- Navbar -->
+      <nav class="primary-menu navbar navbar-expand-lg navbar-dark bg-primary fw-500 border-bottom-0">
+        <div class="container position-relative">
+          <div class="col-auto col-lg-auto">
+            <!-- Logo -->
+            <a class="logo" href="index.html" title="Cash-Ninjas"> <img src="images/logo.png" alt="Cash-Ninjas"
+                style="width: 55px" />
+              <h2 class="text-6 ls-5 text-white text-uppercase" style="margin-top: 10px; font-family: samurai;">
+                Cash-Ninjas</h2>
+            </a>
+            <!-- Logo End -->
+          </div>
+          <div class="col col-lg-10 navbar-accordion">
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+              data-bs-target="#header-nav"><span></span><span></span><span></span></button>
+            <div id="header-nav" class="collapse navbar-collapse justify-content-end">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="/#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="./mint.html">Mint <sup>new</sup></a></li>
+                <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#team">Team</a></li>
+                <li class="nav-item"><a class="nav-link" href="./collection.html">Collection <sup>new</sup></a></li>
+                <li class="nav-item"><a class="nav-link" href="/#clans">Clans</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#roadmap">Roadmap</a></li>
+                <li class="nav-item h-auto"><a class="nav-link" href="/#faq">FAQ</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar End -->
+
+    </header>
+    <!-- Header End -->
+
+    <!-- Content
+  ======================== -->
+    <div id="content" role="main">
+      <div class="section mt-5 pb-0">
+        <div class="container pt-3">
+          <div class="row g-5">
+
+            <!-- Item Image -->
+            <div class="col-lg-6 text-center">
+              <img id="imageNinja" class="img-fluid rounded-5" src="/images/unknown.jpg" alt=""
+                style="max-width: 500px; width: 90%;">
+              <div id="textImageMint" class="text-light text-5 mb-3"></div>
+              <div id="numbersMinted" class="text-light text-4 mb-3" style="display: none;">Minted: <span
+                  id="Placeholder"></span></div>
+            </div>
+
+            <template id="nr-template">
+              <span class="nr"></span>
+              <span style="display: none;" class="comma">,</span>
+            </template>
+            <!-- Item Image end -->
+
+            <!-- Item Details  -->
+            <div class="noMarginMobile col-lg-6 text-center text-lg-start mb-5">
+              <!-- desktop  -->
+              <h2 id="ninjaName" class="text-10 text-white fw-600 mb-4">Ninja #</h2>
+              <p id="ninjaDescription" class="text-light text-4 mb-4">description</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- Content end -->
+
+    <!-- Back to Top
+============================== -->
+    <a id="back-to-top" data-bs-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i
+        class="fa fa-chevron-up"></i></a>
+
+    <!-- JavaScript -->
+    <script src="js/viewer.js" type="module"></script>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <!-- Countdown -->
+    <!-- Bootstrap Spinner -->
+    <script src="/vendor/bootstrap-spinner/bootstrap-spinner.js"></script>
+    <!-- Custom Script -->
+    <script src="js/theme.js" type="module"></script>
+</body>
+
+</html>
