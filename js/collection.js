@@ -204,7 +204,8 @@ async function displayNinjas(offset = 0) {
   if (slicedArray.length === 0) {
     const template = document.getElementById("no-ninjas");
     const noNinjasTemplate = document.importNode(template.content, true);
-    Placeholder.replaceWith(noNinjasTemplate);
+    ninjaList.appendChild(noNinjasTemplate);
+    Placeholder.replaceWith(ninjaList);
   } else {
     // Render list of cashninjas
     const template = document.getElementById("ninja-template");
