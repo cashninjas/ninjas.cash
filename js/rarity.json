@@ -1,0 +1,716 @@
+{
+  "Specials": [
+    {
+      "trait": "Akatsuki",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Badger",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Bag Face",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Bane",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Cashonize",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Don",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Graff",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Kakashi",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Leo",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Mikey",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Moonite",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Naruto",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "NinGlitch",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "NinJedi",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "NinPool",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Ninja Gwen",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Ninja Morales",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Ninjaman 2099",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Ninquisitor",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Noob",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Paytaca",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Raiden",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Rain",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Raph",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Reaper",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Reptile",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Shredder",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Sketch",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Skorpion",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Spawn",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "SubZero",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "The Bat",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "The Ghost",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Wolverine",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    },
+    {
+      "trait": "Zapit",
+      "weight": "1",
+      "occurrence": "1 in 5000 editions (0.02 %)"
+    }
+  ],
+  "Background": [
+    {
+      "trait": "City",
+      "weight": "25",
+      "occurrence": "486 in 5000 editions (9.72 %)"
+    },
+    {
+      "trait": "Cyber City",
+      "weight": "10",
+      "occurrence": "215 in 5000 editions (4.30 %)"
+    },
+    {
+      "trait": "Dark City",
+      "weight": "25",
+      "occurrence": "517 in 5000 editions (10.34 %)"
+    },
+    {
+      "trait": "Dark Forest",
+      "weight": "25",
+      "occurrence": "475 in 5000 editions (9.50 %)"
+    },
+    {
+      "trait": "Great Hall",
+      "weight": "1",
+      "occurrence": "18 in 5000 editions (0.36 %)"
+    },
+    {
+      "trait": "Poison Forest",
+      "weight": "25",
+      "occurrence": "450 in 5000 editions (9.00 %)"
+    },
+    {
+      "trait": "River Path",
+      "weight": "25",
+      "occurrence": "488 in 5000 editions (9.76 %)"
+    },
+    {
+      "trait": "River",
+      "weight": "5",
+      "occurrence": "91 in 5000 editions (1.82 %)"
+    },
+    {
+      "trait": "Swamp",
+      "weight": "25",
+      "occurrence": "526 in 5000 editions (10.52 %)"
+    },
+    {
+      "trait": "Temple Rooftops",
+      "weight": "5",
+      "occurrence": "95 in 5000 editions (1.90 %)"
+    },
+    {
+      "trait": "Temple Streets",
+      "weight": "10",
+      "occurrence": "192 in 5000 editions (3.84 %)"
+    },
+    {
+      "trait": "Temple",
+      "weight": "25",
+      "occurrence": "498 in 5000 editions (9.96 %)"
+    },
+    {
+      "trait": "Village",
+      "weight": "25",
+      "occurrence": "469 in 5000 editions (9.38 %)"
+    },
+    {
+      "trait": "Volcanic",
+      "weight": "25",
+      "occurrence": "445 in 5000 editions (8.90 %)"
+    }
+  ],
+  "Primary Color": [
+    {
+      "trait": "BCH",
+      "weight": "5",
+      "occurrence": "59 in 5000 editions (1.18 %)"
+    },
+    {
+      "trait": "Blue",
+      "weight": "25",
+      "occurrence": "330 in 5000 editions (6.60 %)"
+    },
+    {
+      "trait": "Burnt Orange",
+      "weight": "10",
+      "occurrence": "129 in 5000 editions (2.58 %)"
+    },
+    {
+      "trait": "Cyan",
+      "weight": "25",
+      "occurrence": "334 in 5000 editions (6.68 %)"
+    },
+    {
+      "trait": "Dark Purple",
+      "weight": "10",
+      "occurrence": "121 in 5000 editions (2.42 %)"
+    },
+    {
+      "trait": "Dark Red",
+      "weight": "10",
+      "occurrence": "132 in 5000 editions (2.64 %)"
+    },
+    {
+      "trait": "Forest Green",
+      "weight": "15",
+      "occurrence": "208 in 5000 editions (4.16 %)"
+    },
+    {
+      "trait": "Ghost",
+      "weight": "1",
+      "occurrence": "12 in 5000 editions (0.24 %)"
+    },
+    {
+      "trait": "Green",
+      "weight": "25",
+      "occurrence": "324 in 5000 editions (6.48 %)"
+    },
+    {
+      "trait": "Grey",
+      "weight": "25",
+      "occurrence": "310 in 5000 editions (6.20 %)"
+    },
+    {
+      "trait": "Grimace",
+      "weight": "15",
+      "occurrence": "163 in 5000 editions (3.26 %)"
+    },
+    {
+      "trait": "Ground",
+      "weight": "15",
+      "occurrence": "191 in 5000 editions (3.82 %)"
+    },
+    {
+      "trait": "Midnight",
+      "weight": "10",
+      "occurrence": "142 in 5000 editions (2.84 %)"
+    },
+    {
+      "trait": "Orange",
+      "weight": "25",
+      "occurrence": "340 in 5000 editions (6.80 %)"
+    },
+    {
+      "trait": "Purple",
+      "weight": "25",
+      "occurrence": "347 in 5000 editions (6.94 %)"
+    },
+    {
+      "trait": "Red",
+      "weight": "25",
+      "occurrence": "313 in 5000 editions (6.26 %)"
+    },
+    {
+      "trait": "Sandstone",
+      "weight": "10",
+      "occurrence": "115 in 5000 editions (2.30 %)"
+    },
+    {
+      "trait": "Shadow",
+      "weight": "25",
+      "occurrence": "333 in 5000 editions (6.66 %)"
+    },
+    {
+      "trait": "Sky Blue",
+      "weight": "25",
+      "occurrence": "335 in 5000 editions (6.70 %)"
+    },
+    {
+      "trait": "Swamp",
+      "weight": "15",
+      "occurrence": "204 in 5000 editions (4.08 %)"
+    },
+    {
+      "trait": "Toxic Green",
+      "weight": "15",
+      "occurrence": "210 in 5000 editions (4.20 %)"
+    },
+    {
+      "trait": "Yellow",
+      "weight": "25",
+      "occurrence": "313 in 5000 editions (6.26 %)"
+    }
+  ],
+  "Secondary Color": [
+    {
+      "trait": "BCH",
+      "weight": "5",
+      "occurrence": "71 in 5000 editions (1.42 %)"
+    },
+    {
+      "trait": "Blue",
+      "weight": "25",
+      "occurrence": "304 in 5000 editions (6.08 %)"
+    },
+    {
+      "trait": "Burnt Orange",
+      "weight": "10",
+      "occurrence": "128 in 5000 editions (2.56 %)"
+    },
+    {
+      "trait": "Cyan",
+      "weight": "25",
+      "occurrence": "315 in 5000 editions (6.30 %)"
+    },
+    {
+      "trait": "Dark Purple",
+      "weight": "10",
+      "occurrence": "131 in 5000 editions (2.62 %)"
+    },
+    {
+      "trait": "Dark Red",
+      "weight": "10",
+      "occurrence": "142 in 5000 editions (2.84 %)"
+    },
+    {
+      "trait": "Forest Green",
+      "weight": "15",
+      "occurrence": "220 in 5000 editions (4.40 %)"
+    },
+    {
+      "trait": "Ghost",
+      "weight": "1",
+      "occurrence": "12 in 5000 editions (0.24 %)"
+    },
+    {
+      "trait": "Green",
+      "weight": "25",
+      "occurrence": "357 in 5000 editions (7.14 %)"
+    },
+    {
+      "trait": "Grey",
+      "weight": "25",
+      "occurrence": "330 in 5000 editions (6.60 %)"
+    },
+    {
+      "trait": "Grimace",
+      "weight": "15",
+      "occurrence": "193 in 5000 editions (3.86 %)"
+    },
+    {
+      "trait": "Ground",
+      "weight": "15",
+      "occurrence": "189 in 5000 editions (3.78 %)"
+    },
+    {
+      "trait": "Midnight",
+      "weight": "10",
+      "occurrence": "126 in 5000 editions (2.52 %)"
+    },
+    {
+      "trait": "Orange",
+      "weight": "25",
+      "occurrence": "324 in 5000 editions (6.48 %)"
+    },
+    {
+      "trait": "Purple",
+      "weight": "25",
+      "occurrence": "317 in 5000 editions (6.34 %)"
+    },
+    {
+      "trait": "Red",
+      "weight": "25",
+      "occurrence": "309 in 5000 editions (6.18 %)"
+    },
+    {
+      "trait": "Sandstone",
+      "weight": "10",
+      "occurrence": "108 in 5000 editions (2.16 %)"
+    },
+    {
+      "trait": "Shadow",
+      "weight": "25",
+      "occurrence": "300 in 5000 editions (6.00 %)"
+    },
+    {
+      "trait": "Sky Blue",
+      "weight": "25",
+      "occurrence": "313 in 5000 editions (6.26 %)"
+    },
+    {
+      "trait": "Swamp",
+      "weight": "15",
+      "occurrence": "200 in 5000 editions (4.00 %)"
+    },
+    {
+      "trait": "Toxic Green",
+      "weight": "15",
+      "occurrence": "200 in 5000 editions (4.00 %)"
+    },
+    {
+      "trait": "Yellow",
+      "weight": "25",
+      "occurrence": "376 in 5000 editions (7.52 %)"
+    }
+  ],
+  "Marking": [
+    {
+      "trait": "BCH",
+      "weight": "10",
+      "occurrence": "251 in 5000 editions (5.02 %)"
+    },
+    {
+      "trait": "Blizzard",
+      "weight": "25",
+      "occurrence": "690 in 5000 editions (13.80 %)"
+    },
+    {
+      "trait": "Dragon",
+      "weight": "25",
+      "occurrence": "680 in 5000 editions (13.60 %)"
+    },
+    {
+      "trait": "Fire",
+      "weight": "25",
+      "occurrence": "704 in 5000 editions (14.08 %)"
+    },
+    {
+      "trait": "Jungle",
+      "weight": "25",
+      "occurrence": "658 in 5000 editions (13.16 %)"
+    },
+    {
+      "trait": "Psychic",
+      "weight": "25",
+      "occurrence": "670 in 5000 editions (13.40 %)"
+    },
+    {
+      "trait": "Rogue",
+      "weight": "1",
+      "occurrence": "16 in 5000 editions (0.32 %)"
+    },
+    {
+      "trait": "Thunder",
+      "weight": "25",
+      "occurrence": "685 in 5000 editions (13.70 %)"
+    },
+    {
+      "trait": "Water",
+      "weight": "25",
+      "occurrence": "611 in 5000 editions (12.22 %)"
+    }
+  ],
+  "Eyes": [
+    {
+      "trait": "BCH",
+      "weight": "25",
+      "occurrence": "478 in 5000 editions (9.56 %)"
+    },
+    {
+      "trait": "Berserker",
+      "weight": "15",
+      "occurrence": "256 in 5000 editions (5.12 %)"
+    },
+    {
+      "trait": "Blue",
+      "weight": "25",
+      "occurrence": "472 in 5000 editions (9.44 %)"
+    },
+    {
+      "trait": "Foresight",
+      "weight": "15",
+      "occurrence": "275 in 5000 editions (5.50 %)"
+    },
+    {
+      "trait": "Future",
+      "weight": "5",
+      "occurrence": "95 in 5000 editions (1.90 %)"
+    },
+    {
+      "trait": "Green",
+      "weight": "25",
+      "occurrence": "451 in 5000 editions (9.02 %)"
+    },
+    {
+      "trait": "Invader",
+      "weight": "1",
+      "occurrence": "17 in 5000 editions (0.34 %)"
+    },
+    {
+      "trait": "Magenta",
+      "weight": "25",
+      "occurrence": "430 in 5000 editions (8.60 %)"
+    },
+    {
+      "trait": "Marksmen",
+      "weight": "10",
+      "occurrence": "177 in 5000 editions (3.54 %)"
+    },
+    {
+      "trait": "Orange",
+      "weight": "25",
+      "occurrence": "437 in 5000 editions (8.74 %)"
+    },
+    {
+      "trait": "Poison",
+      "weight": "10",
+      "occurrence": "183 in 5000 editions (3.66 %)"
+    },
+    {
+      "trait": "Psychic",
+      "weight": "5",
+      "occurrence": "96 in 5000 editions (1.92 %)"
+    },
+    {
+      "trait": "Red",
+      "weight": "25",
+      "occurrence": "475 in 5000 editions (9.50 %)"
+    },
+    {
+      "trait": "Synth",
+      "weight": "15",
+      "occurrence": "267 in 5000 editions (5.34 %)"
+    },
+    {
+      "trait": "White",
+      "weight": "25",
+      "occurrence": "455 in 5000 editions (9.10 %)"
+    },
+    {
+      "trait": "Yellow",
+      "weight": "25",
+      "occurrence": "401 in 5000 editions (8.02 %)"
+    }
+  ],
+  "Weapon": [
+    {
+      "trait": "Bomb",
+      "weight": "25",
+      "occurrence": "289 in 5000 editions (5.78 %)"
+    },
+    {
+      "trait": "Bow and Arrow",
+      "weight": "25",
+      "occurrence": "310 in 5000 editions (6.20 %)"
+    },
+    {
+      "trait": "Chicken of Truth",
+      "weight": "1",
+      "occurrence": "17 in 5000 editions (0.34 %)"
+    },
+    {
+      "trait": "Claws",
+      "weight": "25",
+      "occurrence": "343 in 5000 editions (6.86 %)"
+    },
+    {
+      "trait": "Gold Sword Glowing",
+      "weight": "5",
+      "occurrence": "64 in 5000 editions (1.28 %)"
+    },
+    {
+      "trait": "Gold Sword",
+      "weight": "10",
+      "occurrence": "134 in 5000 editions (2.68 %)"
+    },
+    {
+      "trait": "Hanzo Sword Glowing",
+      "weight": "5",
+      "occurrence": "76 in 5000 editions (1.52 %)"
+    },
+    {
+      "trait": "Hanzo Sword",
+      "weight": "10",
+      "occurrence": "128 in 5000 editions (2.56 %)"
+    },
+    {
+      "trait": "Hook Blade",
+      "weight": "25",
+      "occurrence": "301 in 5000 editions (6.02 %)"
+    },
+    {
+      "trait": "Hook Blades",
+      "weight": "15",
+      "occurrence": "193 in 5000 editions (3.86 %)"
+    },
+    {
+      "trait": "Katana",
+      "weight": "15",
+      "occurrence": "197 in 5000 editions (3.94 %)"
+    },
+    {
+      "trait": "Kunai",
+      "weight": "25",
+      "occurrence": "347 in 5000 editions (6.94 %)"
+    },
+    {
+      "trait": "Nunchuck",
+      "weight": "25",
+      "occurrence": "311 in 5000 editions (6.22 %)"
+    },
+    {
+      "trait": "Nunchucks",
+      "weight": "15",
+      "occurrence": "218 in 5000 editions (4.36 %)"
+    },
+    {
+      "trait": "Poison Kunai",
+      "weight": "15",
+      "occurrence": "182 in 5000 editions (3.64 %)"
+    },
+    {
+      "trait": "Sai",
+      "weight": "25",
+      "occurrence": "332 in 5000 editions (6.64 %)"
+    },
+    {
+      "trait": "Scythe",
+      "weight": "25",
+      "occurrence": "324 in 5000 editions (6.48 %)"
+    },
+    {
+      "trait": "Short Sword",
+      "weight": "25",
+      "occurrence": "314 in 5000 editions (6.28 %)"
+    },
+    {
+      "trait": "Short Swords",
+      "weight": "15",
+      "occurrence": "202 in 5000 editions (4.04 %)"
+    },
+    {
+      "trait": "Shuriken",
+      "weight": "25",
+      "occurrence": "359 in 5000 editions (7.18 %)"
+    },
+    {
+      "trait": "Spatula",
+      "weight": "1",
+      "occurrence": "8 in 5000 editions (0.16 %)"
+    },
+    {
+      "trait": "Staff",
+      "weight": "25",
+      "occurrence": "316 in 5000 editions (6.32 %)"
+    }
+  ]
+}

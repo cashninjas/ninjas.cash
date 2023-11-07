@@ -91,16 +91,52 @@
   ======================== -->
     <div id="content" role="main">
       <div class="section mt-5 pb-0">
-        <div class="container pt-3">
+        <div class="container pt-3 mb-5">
           <div class="row g-5">
 
             <!-- Item Image -->
             <div class="col-lg-6 text-center">
               <img id="imageNinja" class="img-fluid rounded-5" src="/images/unknown.jpg" alt=""
                 style="max-width: 500px; width: 90%;">
-              <div id="textImageMint" class="text-light text-5 mb-3"></div>
-              <div id="numbersMinted" class="text-light text-4 mb-3" style="display: none;">Minted: <span
-                  id="Placeholder"></span></div>
+              <div id="normalAttributes" class="text-light text-4 mt-4 mb-4 text-center">
+                <div style="margin: 0 10px; display: inline-block;">
+                  <b>Marking: </b>
+                  <span id="Marking">None</span>
+                  <span id="MarkingRarity"></span>
+                </div>
+                <div style="margin: 0 10px; display: inline-block;">
+                  <b>Weapon: </b>
+                  <span id="Weapon">None</span>
+                  <span id="WeaponRarity"></span>
+                </div>
+                <div style="margin: 0 10px; display: inline-block;">
+                  <b>Background: </b>
+                  <span id="Background">None</span>
+                  <span id="BackgroundRarity"></span>
+                </div>
+                <div style="margin: 0 10px; display: inline-block;">
+                  <b>Eyes: </b>
+                  <span id="Eyes">None</span>
+                  <span id="EyesRarity"></span>
+                </div>
+                <div style="margin: 0 10px; display: inline-block;">
+                  <b>Primary Color: </b>
+                  <span id="PrimaryColor">None</span>
+                  <span id="PrimaryColorRarity"></span>
+                </div>
+                <div style="margin: 0 10px; display: inline-block;">
+                  <b>Secondary Color: </b>
+                  <span id="SecondaryColor">None</span>
+                  <span id="SecondaryColorRarity"></span>
+                </div>
+              </div>
+              <div id="specialAttribute" class="text-light text-4 mt-4 mb-4 text-center" style="display: none;">
+                <div style="margin: 0 10px; display: inline-block;">
+                  <b>Special: </b>
+                  <span id="Specials" style="color: #20c997;"></span>
+                  <span>(1/35 specials)</span>
+                </div>
+              </div>
             </div>
 
             <template id="nr-template">
@@ -110,7 +146,7 @@
             <!-- Item Image end -->
 
             <!-- Item Details  -->
-            <div class="noMarginMobile col-lg-6 text-center text-lg-start mb-5">
+            <div class="noMarginMobile col-lg-6 text-center text-lg-start">
               <!-- desktop  -->
               <h2 id="ninjaName" class="text-10 text-white fw-600 mb-4">Ninja #</h2>
               <p id="ninjaDescription" class="text-light text-4 mb-4">description</p>
