@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^4.4.5"
+    "vite": "^5.0.12"
   },
   "dependencies": {
     "@bitauth/libauth": "^2.0.0-alpha.8",
