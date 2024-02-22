@@ -168,6 +168,7 @@ async function fetchUserNinjas() {
     const userAddress = await getUserAddress();
     connectedUserAddress = userAddress;
     const listCashninjas = await getNinjasOnAddr(userAddress);
+    document.getElementById("myCollectionButton").textContent = `My Collection (${listCashninjas.length})`
     ninjasConnectedWallet = listCashninjas;
   }
   window.history.replaceState({}, "", `${location.pathname}?addr=${connectedUserAddress}`);
