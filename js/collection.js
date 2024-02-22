@@ -147,13 +147,7 @@ fullCollectionButton.onclick = () => {
 };
 myCollectionButton.onclick = async () => {
   if (session) fetchUserNinjas();
-  else if (lastSession && !urlParamAddr) {
-    const confirmReuse = confirm("The collection page is going to re-use your previous WalletConnect session, make sure you have your wallet open");
-    if (confirmReuse) {
-      session = lastSession;
-      fetchUserNinjas();
-    }
-  } else {
+  else {
     const { uri, approval } = await signClient.connect({ requiredNamespaces });
     await walletConnectModal.openModal({ uri });
     // Await session approval from the wallet.
