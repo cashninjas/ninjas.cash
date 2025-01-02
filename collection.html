@@ -328,7 +328,7 @@
             href="https://github.com/cashninjas" target="_blank" title="GitHub"><i class="fab fa-github"></i></a></li>
       </ul>
       <!-- Copyright Text -->
-      <p class="text-center mb-4">Copyright © 2023-2024 <a href="#" class="fw-500">Cash-Ninjas</a>. All Rights Reserved.
+      <p class="text-center mb-4">Copyright © 2023-<span id="currentYear"></span> <a href="#" class="fw-500">Cash-Ninjas</a>. All Rights Reserved.
       </p>
     </div>
   </footer>
@@ -343,6 +343,10 @@
       class="fa fa-chevron-up"></i></a>
 
   <!-- JavaScript -->
+   <script>
+    const currentYear = new Date().getFullYear();
+    document.getElementById("currentYear").innerHTML = currentYear;
+  </script>
   <script src="js/collection.js" type="module"></script>
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
